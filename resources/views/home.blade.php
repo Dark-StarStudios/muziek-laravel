@@ -12,6 +12,7 @@
             <a href="{{ route('home') }}">Home</a>
             <a href="{{ route('library') }}">Bibliotheek</a>
             <a href="{{ route('songs') }}">Liedjes</a>
+            <a href="{{ route('addmusic') }}">AddMusic</a>
         </nav>
     </header>
 </body>
