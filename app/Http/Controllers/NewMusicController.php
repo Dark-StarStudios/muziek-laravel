@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Validation\Rule;
 
+use App\Models\Song;
 
 class NewMusicController extends Controller
 {
@@ -17,9 +18,9 @@ class NewMusicController extends Controller
      */
     public function store(Request $request)
     {
-        // $name = $request->input('naam_music');
-        // $author = $request->input('auteur');
-        // $year = $request->input('jaar');
+        $name = $request->input('naam_music');
+        $author = $request->input('auteur');
+        $year = $request->input('jaar');
 
         $validation = $request->validate([
             'naam_music' => 'required|string|min:3|max:32',
@@ -29,5 +30,16 @@ class NewMusicController extends Controller
         // echo $name;
         // echo $author;
         // echo $year;
+        // $song = Song::create([
+        //     'song_name' => $name,
+        //     'author' => $author,
+        //     'release_year' => $year,
+        // ]);
+        $song = new Song;
+        $song->song_name = $name;
+        $song->author = $author;
+        $song->release_year = $year;
+
+        $song->save();
     }
 }

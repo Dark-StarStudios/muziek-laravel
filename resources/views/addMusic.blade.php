@@ -15,7 +15,7 @@
         </nav>
     </header>
     <form action="{{ route('addmusic') }}" method="post">
-        <!-- @csrf -->
+        @csrf
         <input type="text" name="naam_music" placeholder="Naam">
         <input type="text" name="auteur" placeholder="Auteur">
         <input type="text" name="jaar" placeholder="Release jaar">
